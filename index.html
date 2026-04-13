@@ -6,31 +6,25 @@
     <title>FixItCan | Premium Property Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* System Variables for Easy Theming */
         :root {
             --bg-color: #f8fafc;
             --surface-color: #ffffff;
             --text-main: #0f172a;
             --text-muted: #64748b;
             --primary-dark: #1e293b;
-            --accent-color: #d97706; /* Muted gold/amber signals quality and trades */
+            --accent-color: #d97706; 
             --border-color: #e2e8f0;
             --radius: 8px;
             --transition: all 0.3s ease;
         }
 
-        /* Reset & Base Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--bg-color); color: var(--text-main); line-height: 1.6; }
         h1, h2, h3 { font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
-        p { color: var(--text-muted); margin-bottom: 1rem; }
-        a { text-decoration: none; color: inherit; }
         
-        /* Layout Containers */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         section { padding: 80px 0; }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 14px 28px;
@@ -40,54 +34,47 @@
             cursor: pointer;
             transition: var(--transition);
             border: none;
+            text-decoration: none;
         }
         .btn-primary { background: var(--primary-dark); color: white; }
-        .btn-primary:hover { background: var(--text-main); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .btn-accent { background: var(--accent-color); color: white; }
         .btn-accent:hover { filter: brightness(1.1); transform: translateY(-2px); }
 
-        /* Header & Navigation */
+        /* Navigation */
         header { background: var(--surface-color); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; max-width: 1100px; margin: 0 auto; }
-        .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.05em; color: var(--primary-dark); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 24px; max-width: 1100px; margin: 0 auto; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary-dark); }
         .logo span { color: var(--accent-color); }
 
-        /* Hero Section */
-        .hero { background: var(--surface-color); padding: 100px 0; text-align: center; border-bottom: 1px solid var(--border-color); }
-        .hero h1 { font-size: 3.5rem; max-width: 800px; margin: 0 auto 20px; color: var(--primary-dark); }
-        .hero p { font-size: 1.25rem; max-width: 600px; margin: 0 auto 40px; }
+        /* Hero with Cinematic Background */
+        .hero { 
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 140px 0; 
+            text-align: center; 
+            color: white; 
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 40px; color: #cbd5e1; }
 
-        /* Grid Layouts */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+        /* Content Grid */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+        .card { background: var(--surface-color); padding: 40px; border-radius: var(--radius); border: 1px solid var(--border-color); }
+        .card h3 { margin-bottom: 16px; border-bottom: 2px solid var(--accent-color); display: inline-block; }
 
-        /* Cards */
-        .card { background: var(--surface-color); padding: 40px 32px; border-radius: var(--radius); border: 1px solid var(--border-color); transition: var(--transition); }
-        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-4px); }
-        .card h3 { margin-bottom: 16px; font-size: 1.5rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 8px; display: inline-block; }
+        /* Dark Section for Process */
+        .bg-dark { background: var(--primary-dark); color: white; padding: 100px 0; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .step-number { background: var(--accent-color); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; }
 
-        /* Section Specifics */
-        .bg-dark { background: var(--primary-dark); color: white; }
-        .bg-dark p { color: #cbd5e1; }
-        .bg-dark h2 { color: white; margin-bottom: 40px; text-align: center; font-size: 2.5rem; }
-        
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.5rem; }
+        footer { background: #0f172a; color: #94a3b8; padding: 30px 0; text-align: center; font-size: 0.9rem; }
 
-        /* Process Steps */
-        .step { text-align: center; position: relative; }
-        .step-number { background: var(--accent-color); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; margin: 0 auto 16px; font-size: 1.2rem; }
-        .step h3 { font-size: 1.2rem; margin-bottom: 8px; }
-
-        /* Footer */
-        footer { background: var(--text-main); color: #94a3b8; padding: 40px 0; text-align: center; }
-        footer p { margin: 0; color: #94a3b8; font-size: 0.9rem; }
-
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
-            section { padding: 60px 0; }
+            .hero { background-attachment: scroll; } /* Better performance on mobile */
         }
     </style>
 </head>
@@ -96,76 +83,57 @@
     <header>
         <div class="nav-container">
             <div class="logo">FixIt<span>Can</span></div>
-            <a href="#contact" class="btn btn-primary">Request a Quote</a>
+            <a href="mailto:hello@fixitcan.com" class="btn btn-primary">Quote</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
             <h1>Small jobs. High standards.</h1>
-            <p>Professional repair and installation services for high-end residential and retail spaces. Clean work. Clear communication. Done right the first time.</p>
-            <a href="#contact" class="btn btn-accent">Book Your Service</a>
+            <p>Professional repair and installation for high-end residential and retail spaces. Clean work. Clear communication. Done right the first time.</p>
+            <a href="mailto:hello@fixitcan.com" class="btn btn-accent">Request a Service</a>
         </div>
     </section>
 
     <section class="container">
-        <div class="section-header">
-            <h2>Our Expertise</h2>
-            <p>Targeted solutions designed to minimize disruption and maximize quality.</p>
-        </div>
         <div class="grid-2">
             <div class="card">
-                <h3>Residential Services</h3>
-                <p>Fixture installation, precise drywall repair, custom trim work, and detail-focused upgrades that seamlessly integrate into and elevate the look of your home.</p>
+                <h3>Residential</h3>
+                <p>Fixture installation, drywall repair, and detail-focused upgrades. We treat your home with the respect it deserves.</p>
             </div>
             <div class="card">
                 <h3>Retail & Commercial</h3>
-                <p>Display installation, preventative maintenance, and quick-turn repairs. We operate cleanly in finished, high-traffic environments to keep your business running.</p>
+                <p>Maintenance and quick-turn repairs for finished environments. Minimal disruption, maximum reliability.</p>
             </div>
         </div>
     </section>
 
     <section class="bg-dark">
         <div class="container">
-            <h2>The FixItCan Process</h2>
+            <h2 style="text-align: center; margin-bottom: 50px;">Our Process</h2>
             <div class="grid-4">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Reach Out</h3>
-                    <p>Send details or request a site visit.</p>
+                    <p>Send details of your project.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Clear Pricing</h3>
-                    <p>Receive a transparent, no-surprise quote.</p>
+                    <p>Receive clear, upfront pricing.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Reliable Scheduling</h3>
-                    <p>Work booked firmly around your operational needs.</p>
+                    <p>Scheduled around your needs.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Clean Execution</h3>
-                    <p>Job completed properly, leaving the site immaculate.</p>
+                    <p>Site left clean and perfect.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container">
-        <div class="section-header">
-            <h2>Ready to improve your space?</h2>
-            <p>Experience reliable scheduling, respectful work, and detail-oriented results.</p>
-            <br>
-            <a href="mailto:hello@fixitcan.com" class="btn btn-primary">Contact Us Today</a>
-        </div>
-    </section>
-
     <footer>
-        <div class="container">
-            <p>&copy; 2026 FixItCan — Professional Property Service. All rights reserved.</p>
-        </div>
+        <p>&copy; 2026 FixItCan — Professional Property Service.</p>
     </footer>
 
 </body>
