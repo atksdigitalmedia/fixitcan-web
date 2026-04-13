@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixItCan | Premium Property Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* System Variables for Easy Theming */
+        :root {
+            --bg-color: #f8fafc;
+            --surface-color: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --primary-dark: #1e293b;
+            --accent-color: #d97706; /* Muted gold/amber signals quality and trades */
+            --border-color: #e2e8f0;
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+        h1, h2, h3 { font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
+        p { color: var(--text-muted); margin-bottom: 1rem; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Layout Containers */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 80px 0; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        .btn-primary { background: var(--primary-dark); color: white; }
+        .btn-primary:hover { background: var(--text-main); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .btn-accent { background: var(--accent-color); color: white; }
+        .btn-accent:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+        /* Header & Navigation */
+        header { background: var(--surface-color); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; max-width: 1100px; margin: 0 auto; }
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.05em; color: var(--primary-dark); }
+        .logo span { color: var(--accent-color); }
+
+        /* Hero Section */
+        .hero { background: var(--surface-color); padding: 100px 0; text-align: center; border-bottom: 1px solid var(--border-color); }
+        .hero h1 { font-size: 3.5rem; max-width: 800px; margin: 0 auto 20px; color: var(--primary-dark); }
+        .hero p { font-size: 1.25rem; max-width: 600px; margin: 0 auto 40px; }
+
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+
+        /* Cards */
+        .card { background: var(--surface-color); padding: 40px 32px; border-radius: var(--radius); border: 1px solid var(--border-color); transition: var(--transition); }
+        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-4px); }
+        .card h3 { margin-bottom: 16px; font-size: 1.5rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 8px; display: inline-block; }
+
+        /* Section Specifics */
+        .bg-dark { background: var(--primary-dark); color: white; }
+        .bg-dark p { color: #cbd5e1; }
+        .bg-dark h2 { color: white; margin-bottom: 40px; text-align: center; font-size: 2.5rem; }
+        
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; }
+
+        /* Process Steps */
+        .step { text-align: center; position: relative; }
+        .step-number { background: var(--accent-color); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; margin: 0 auto 16px; font-size: 1.2rem; }
+        .step h3 { font-size: 1.2rem; margin-bottom: 8px; }
+
+        /* Footer */
+        footer { background: var(--text-main); color: #94a3b8; padding: 40px 0; text-align: center; }
+        footer p { margin: 0; color: #94a3b8; font-size: 0.9rem; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">FixIt<span>Can</span></div>
+            <a href="#contact" class="btn btn-primary">Request a Quote</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Small jobs. High standards.</h1>
+            <p>Professional repair and installation services for high-end residential and retail spaces. Clean work. Clear communication. Done right the first time.</p>
+            <a href="#contact" class="btn btn-accent">Book Your Service</a>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="section-header">
+            <h2>Our Expertise</h2>
+            <p>Targeted solutions designed to minimize disruption and maximize quality.</p>
+        </div>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Residential Services</h3>
+                <p>Fixture installation, precise drywall repair, custom trim work, and detail-focused upgrades that seamlessly integrate into and elevate the look of your home.</p>
+            </div>
+            <div class="card">
+                <h3>Retail & Commercial</h3>
+                <p>Display installation, preventative maintenance, and quick-turn repairs. We operate cleanly in finished, high-traffic environments to keep your business running.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark">
+        <div class="container">
+            <h2>The FixItCan Process</h2>
+            <div class="grid-4">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Reach Out</h3>
+                    <p>Send details or request a site visit.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Clear Pricing</h3>
+                    <p>Receive a transparent, no-surprise quote.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Reliable Scheduling</h3>
+                    <p>Work booked firmly around your operational needs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Clean Execution</h3>
+                    <p>Job completed properly, leaving the site immaculate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="section-header">
+            <h2>Ready to improve your space?</h2>
+            <p>Experience reliable scheduling, respectful work, and detail-oriented results.</p>
+            <br>
+            <a href="mailto:hello@fixitcan.com" class="btn btn-primary">Contact Us Today</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FixItCan — Professional Property Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
